@@ -15,9 +15,6 @@ export default function AdminLayout({ children }) {
             <h1 className="text-xl font-bold">Admin Dashboard</h1>
 
             {/* 3. User Dropdown Navigation */}
-            <div className="bg-red-600 rounded-full h-10 w-10 flex justify-center items-center">
-              HS
-            </div>
             <UserNav />
           </div>
         </header>
