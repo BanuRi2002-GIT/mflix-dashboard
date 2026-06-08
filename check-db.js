@@ -13,7 +13,15 @@ async function checkDatabase() {
     // Check what collections exist
     const collections = await db.listCollections().toArray();
     console.log("\n📚 Collections in sample_mflix:");
+<<<<<<< HEAD
     collections.forEach(c => console.log(`   - ${c.name}`));
+=======
+    if (collections.length === 0) {
+      console.log("   No collections found!");
+    } else {
+      collections.forEach(c => console.log(`   - ${c.name}`));
+    }
+>>>>>>> 4f365aece361836197dab8eabc13e98153dcf17e
     
     // Check movies_n collection
     const moviesCount = await db.collection("movies_n").countDocuments();
@@ -24,11 +32,19 @@ async function checkDatabase() {
       console.log("\n📽️ Sample movie:");
       console.log(JSON.stringify(sample[0], null, 2).substring(0, 300) + "...");
     }
+<<<<<<< HEAD
     
     // Check movies collection (original)
     const originalCount = await db.collection("movies").countDocuments();
     console.log(`\n🎬 Movies in 'movies' collection: ${originalCount}`);
     
+=======
+
+    // Check movies collection (original)
+    const originalCount = await db.collection("movies").countDocuments();
+    console.log(`\n🎬 Movies in 'movies' collection: ${originalCount}`);
+
+>>>>>>> 4f365aece361836197dab8eabc13e98153dcf17e
   } catch (error) {
     console.error("❌ Error:", error);
   } finally {
